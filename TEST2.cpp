@@ -1,25 +1,25 @@
-#include<iostream>
-#include<string>
-#include<fstream>
-#include<sstream>
-#include<functional>
-#include<vector>
-#include<ctime>
-#include<iomanip>
+#include<iostream>//Thư viện nhập xuâts
+#include<string>//Thư viện sử dụng kiểu dữ liệu string
+#include<fstream>//Thư viện thao tác với tệp đọc ghi
+#include<sstream>//Thư viện thao luồng chuỗi
+#include<functional>//Thư viện hàm hash
+#include<vector>//Thư viện sử dụng vector
+#include<ctime>//Thư viện cho các hàm thời gian
+#include<iomanip>//Thư viện định dạng đầu ra
 using namespace std;
-//Hàm bãm mk :chuy?n ð?i ch?i m?t kh?u thành giá tr? chu?i ð? b?o m?t
+//Hàm băm mk chuyển mk thành chuỗi
 string bamMK(string& matkhau)
 {
 	hash<string>hashObj;
 	size_t hashValue = hashObj(matkhau);
-	return to_string(hashValue);
+	return to_string(hashValue);//chuyển thành chuỗi
 }
-//Hàm sinh OTP ng?u nhiên 
+//Hàm sinh OTP ngẫu nhiên 
 string sinhOTP() {
-	int otp = rand() % 9000 + 1000; // Sinh s? 4 ch? s?
-	return to_string(otp); // Chuy?n s? thành chu?i
+	int otp = rand() % 9000 + 1000; // Sinh 4 chữ  số
+	return to_string(otp); // Chuyển số thành chữ
 }
-//Hàm sinh mk t? ð?ng(ð? dài 8 kitu g?m ch? và s?)
+//Hàm sinh mk tự động gồm 8 kí tự
 string sinhMKtudong()
 {
 	string ktu = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -30,7 +30,7 @@ string sinhMKtudong()
 	}
 	return MK;
 }
-//Struct d?i di?n cho 1 tài kho?n ngý?i dùng
+//Struct đại diện cho 1 tài khoản người dùng
 struct Taikhoan
 {
 	string ten, MK, Ngaysinh, cccd,sdt;
@@ -49,31 +49,31 @@ public:
 		Owner = owner;
 		TienHienCo = 0.0;
 	}
-	string getId()const {  //Hàm tr? v? Id c?a ví.
+	string getId()const {  //Hàm trả về Id của ví
 		return Id;
 	}
-	string getOwner()const {  //hàm tr? v? tên ch? c?a ví.
+	string getOwner()const {  //hàm trả về tên chủ cái ví.
 		return Owner;
 	}
-	double getMoney()const {  //hàm tr? v? s? ti?n hi?n có trong tài kho?n.
+	double getMoney()const {  //hàm trả về số tiền hiện có trong tài khoản.
 		return TienHienCo;
 	}
-	vector<string> getLSGD()const {  //Hàm ð? lýu tr? l?ch s? ð? giao d?ch.
+	vector<string> getLSGD()const {  //Hàm lưu lịch sử giao dịch.
 		return LichSuGiaoDich;
 	}
-	void AddHistory(string x) {  //Thêm vào l?ch s? giao ð?ch khi n?p, chuy?n ho?c nh?n ti?n.
+	void AddHistory(string x) {  //Thêm vào lịch sử giao dịch khi nạp, chuyển hoặc nhậnn tiền.
 		LichSuGiaoDich.push_back(x);
 	}
-	void HienLs()const {  //Chýõng trinh giúp hi?n th? toàn b? l?ch s? giao d?ch.
+	void HienLs()const {  //hiển thị lịch sử giao dịch
 		for (int i = 0; i < LichSuGiaoDich.size(); i++) {
 			cout << "-" << LichSuGiaoDich[i] << endl;
 		}
 	}
-	void Gui(double amount) {  //Chýõng tr?nh dùng ð? c?ng ti?n vào tài kho?ng khi n?p ti?n vào ho?c nh?n ðý?c t? tk khác.
+	void Gui(double amount) {  
 		TienHienCo += amount;
 		AddHistory("Da Nhan: +" + to_string(amount));
 	}
-	bool Rut(double amount) {  //Chýõng tr?nh dùng de rut tien ho?c b? tr? khi chuy?n ti?n.
+	bool Rut(double amount) {  
 		if (TienHienCo >= amount) {
 			TienHienCo -= amount;
 			AddHistory("Da rut: -" + to_string(amount));
@@ -110,7 +110,7 @@ public:
     ifstream In("wallets.txt");
     
     if (!In.is_open()) {
-        cout << "Không t?m th?y file wallets.txt ho?c file tr?ng" << endl;
+        cout << "Không tìmm thấy file wallets.txt ." << endl;
         return;
     }
 
@@ -457,7 +457,7 @@ public:
 		cin >> nhapOTP;
 		return nhapOTP == otp;
 	}
-	// Hàm c?p nh?t thông tin cá nhân (dành cho user thý?ng)
+	// Hàm cập nhập thông tin cá nhân (dành cho user)
 	 void CapNhatThongTinCaNhan() {
         if (currentUser.empty()) {
             cout << "Vui long dang nhap truoc khi cap nhat thong tin.\n";
@@ -571,7 +571,7 @@ public:
             cout << "Cap nhat thanh cong.\n";
         }
     }
-	// Hàm admin ch?nh s?a thông tin tài kho?n khác
+	// Hàm admin chỉnnh sửa thông tin tài khoản khác
 	void AdminChinhSuaTaiKhoan() {
 		if (!isAdmin) {
 			cout << "Chi admin moi co quyen chinh sua thong tin tai khoan khac.\n";
