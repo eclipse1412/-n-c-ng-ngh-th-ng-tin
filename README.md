@@ -15,12 +15,11 @@ Mục tiêu dự án là giúp sinh viên thực hành kỹ năng lập trình h
 
 ## Thành viên nhóm
 
-| Họ tên               | Công việc phụ trách                                                                 |
-|----------------------|--------------------------------------------------------------------------------------|
-| **Nguyễn Thanh Tú**  | Chức năng đăng ký, đăng nhập, sinh mật khẩu tự động, xác thực đăng nhập             |
-| **Dương Gia Bảo**    | Phân quyền admin/user, OTP, xác minh thay đổi thông tin và giao dịch                |
-| **Trần Anh Hào**     | Quản lý lưu trữ file `users.txt`, `wallets.txt`, sao lưu/phục hồi dữ liệu           |
-| **Trần Hoàng Hải Đăng** | Thiết kế giao diện dòng lệnh, tài liệu README, hướng dẫn sử dụng chương trình   |
+ 
+**1. Nguyễn Thanh Tú:**   Chức năng đăng ký, đăng nhập, sinh mật khẩu tự động, xác thực đăng nhập             
+**2. Dương Gia Bảo:**    Phân quyền admin/user, OTP, xác minh thay đổi thông tin và giao dịch                
+**3. Trần Anh Hào:**      Quản lý lưu trữ file `users.txt`, `wallets.txt`, sao lưu/phục hồi dữ liệu           
+**4. Trần Hoàng Hải Đăng:** Thiết kế giao diện dòng lệnh, tài liệu README, hướng dẫn sử dụng chương trình   
 
 ---
 
