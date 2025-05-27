@@ -1,4 +1,4 @@
-# Hệ thống Quản lý Người dùng và Ví Điểm Thưởng (C++ CLI)
+# Hệ thống Quản lý Người dùng và Ví Điểm Thưởng (C++)
 
 ## Giới thiệu dự án
 
