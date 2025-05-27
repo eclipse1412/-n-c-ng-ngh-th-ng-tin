@@ -12,8 +12,8 @@ Dự án: Quản lý hệ thống người dùng bằng C++
 - **Trần Hoàng Hải Đăng**: Thiết kế giao diện dòng lệnh, viết tài liệu và hướng dẫn sử dụng.
 
  3. Phân tích, đặc tả chức năng
-- Đăng ký tài khoản: Người dùng nhập tên, mật khẩu, thông tin được lưu vào file.
-- Đăng nhập: Kiểm tra tài khoản và mật khẩu để xác thực người dùng.
-- Phân quyền: Phân biệt quyền Admin và User, điều khiển truy cập tính năng.
-- Lưu trữ dữ liệu: Dữ liệu người dùng được lưu trong file `users.txt` đơn giản.
-- Giao diện: Menu dòng lệnh, thao tác nhập số chọn chức năng, nhập dữ liệu.
+- **Đăng ký tài khoản**: Người dùng nhập tên, mật khẩu, thông tin được lưu vào file.
+- **Đăng nhập**: Kiểm tra tài khoản và mật khẩu để xác thực người dùng.
+- **Phân quyền**: Phân biệt quyền Admin và User, điều khiển truy cập tính năng.
+- **Lưu trữ dữ liệu**: Dữ liệu người dùng được lưu trong file `users.txt` đơn giản.
+- **Giao diện**: Menu dòng lệnh, thao tác nhập số chọn chức năng, nhập dữ liệu.
