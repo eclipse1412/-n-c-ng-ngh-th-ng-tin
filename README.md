@@ -7,7 +7,7 @@ Dự án: Quản lý hệ thống người dùng bằng C++
 
  2. Thành viên tham gia dự án
 - **Nguyễn Thanh Tú**: Phát triển chức năng đăng ký và đăng nhập người dùng.
--** Dương Gia Bảo**: Xây dựng module phân quyền và quản lý quyền truy cập.
+- **Dương Gia Bảo**: Xây dựng module phân quyền và quản lý quyền truy cập.
 - **Trần Anh Hào**: Thiết kế lưu trữ dữ liệu và xử lý file.
 - **Trần Hoàng Hải Đăng**: Thiết kế giao diện dòng lệnh, viết tài liệu và hướng dẫn sử dụng.
 
