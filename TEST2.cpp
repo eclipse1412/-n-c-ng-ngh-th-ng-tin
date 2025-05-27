@@ -6,24 +6,20 @@
 #include<vector>
 #include<ctime>
 #include<iomanip>
-
-
-
-
 using namespace std;
-//Hàm bãm mk :chuy?n ð?i ch?i m?t kh?u thành giá tr? chu?i ð? b?o m?t
+//HÃ m bÃ£m mk :chuy?n Ã°?i ch?i m?t kh?u thÃ nh giÃ¡ tr? chu?i Ã°? b?o m?t
 string bamMK(string& matkhau)
 {
 	hash<string>hashObj;
 	size_t hashValue = hashObj(matkhau);
 	return to_string(hashValue);
 }
-//Hàm sinh OTP ng?u nhiên 
+//HÃ m sinh OTP ng?u nhiÃªn 
 string sinhOTP() {
 	int otp = rand() % 9000 + 1000; // Sinh s? 4 ch? s?
-	return to_string(otp); // Chuy?n s? thành chu?i
+	return to_string(otp); // Chuy?n s? thÃ nh chu?i
 }
-//Hàm sinh mk t? ð?ng(ð? dài 8 kitu g?m ch? và s?)
+//HÃ m sinh mk t? Ã°?ng(Ã°? dÃ i 8 kitu g?m ch? vÃ  s?)
 string sinhMKtudong()
 {
 	string ktu = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -34,7 +30,7 @@ string sinhMKtudong()
 	}
 	return MK;
 }
-//Struct d?i di?n cho 1 tài kho?n ngý?i dùng
+//Struct d?i di?n cho 1 tÃ i kho?n ngÃ½?i dÃ¹ng
 struct Taikhoan
 {
 	string ten, MK, Ngaysinh, cccd,sdt;
@@ -53,31 +49,31 @@ public:
 		Owner = owner;
 		TienHienCo = 0.0;
 	}
-	string getId()const {  //Hàm tr? v? Id c?a ví.
+	string getId()const {  //HÃ m tr? v? Id c?a vÃ­.
 		return Id;
 	}
-	string getOwner()const {  //hàm tr? v? tên ch? c?a ví.
+	string getOwner()const {  //hÃ m tr? v? tÃªn ch? c?a vÃ­.
 		return Owner;
 	}
-	double getMoney()const {  //hàm tr? v? s? ti?n hi?n có trong tài kho?n.
+	double getMoney()const {  //hÃ m tr? v? s? ti?n hi?n cÃ³ trong tÃ i kho?n.
 		return TienHienCo;
 	}
-	vector<string> getLSGD()const {  //Hàm ð? lýu tr? l?ch s? ð? giao d?ch.
+	vector<string> getLSGD()const {  //HÃ m Ã°? lÃ½u tr? l?ch s? Ã°? giao d?ch.
 		return LichSuGiaoDich;
 	}
-	void AddHistory(string x) {  //Thêm vào l?ch s? giao ð?ch khi n?p, chuy?n ho?c nh?n ti?n.
+	void AddHistory(string x) {  //ThÃªm vÃ o l?ch s? giao Ã°?ch khi n?p, chuy?n ho?c nh?n ti?n.
 		LichSuGiaoDich.push_back(x);
 	}
-	void HienLs()const {  //Chýõng trinh giúp hi?n th? toàn b? l?ch s? giao d?ch.
+	void HienLs()const {  //ChÃ½Ãµng trinh giÃºp hi?n th? toÃ n b? l?ch s? giao d?ch.
 		for (int i = 0; i < LichSuGiaoDich.size(); i++) {
 			cout << "-" << LichSuGiaoDich[i] << endl;
 		}
 	}
-	void Gui(double amount) {  //Chýõng tr?nh dùng ð? c?ng ti?n vào tài kho?ng khi n?p ti?n vào ho?c nh?n ðý?c t? tk khác.
+	void Gui(double amount) {  //ChÃ½Ãµng tr?nh dÃ¹ng Ã°? c?ng ti?n vÃ o tÃ i kho?ng khi n?p ti?n vÃ o ho?c nh?n Ã°Ã½?c t? tk khÃ¡c.
 		TienHienCo += amount;
 		AddHistory("Da Nhan: +" + to_string(amount));
 	}
-	bool Rut(double amount) {  //Chýõng tr?nh dùng de rut tien ho?c b? tr? khi chuy?n ti?n.
+	bool Rut(double amount) {  //ChÃ½Ãµng tr?nh dÃ¹ng de rut tien ho?c b? tr? khi chuy?n ti?n.
 		if (TienHienCo >= amount) {
 			TienHienCo -= amount;
 			AddHistory("Da rut: -" + to_string(amount));
@@ -114,7 +110,7 @@ public:
     ifstream In("wallets.txt");
     
     if (!In.is_open()) {
-        cout << "Không t?m th?y file wallets.txt ho?c file tr?ng" << endl;
+        cout << "KhÃ´ng t?m th?y file wallets.txt ho?c file tr?ng" << endl;
         return;
     }
 
@@ -128,7 +124,7 @@ public:
         if (!getline(ss, id, ',') || 
             !getline(ss, owner, ',') || 
             !getline(ss, money, ',')) {
-            cerr << "D?ng không h?p l?: " << line << endl;
+            cerr << "D?ng khÃ´ng h?p l?: " << line << endl;
             continue;
         }
 
@@ -236,16 +232,16 @@ public:
     	srand((unsigned)time(0));
 	}
 
-	//hàm t?o tài kho?n m?i
+	//hÃ m t?o tÃ i kho?n m?i
 	void taoTK() {
     string TenTK, MK, Ngaysinh, cccd, sdt;
     int ViChinh = 0, ViPhu = 0;
     bool admin = false;
-    cout << "Nhap tên tài khoan moi: ";
+    cout << "Nhap tÃªn tÃ i khoan moi: ";
     cin >> TenTK;
     MK = sinhMKtudong();
     cout << "Mat khau duoc tao tu dong: " << MK << endl;
-    cout << "Nhap ngày sinh (dd/mm/yyyy): ";
+    cout << "Nhap ngÃ y sinh (dd/mm/yyyy): ";
     cin >> Ngaysinh;
     if (Ngaysinh.size() >= 8) {
         if (Ngaysinh[1] == '/')
@@ -255,11 +251,11 @@ public:
     }
     cout << "Nhap so dien thoai:";
     cin >> sdt;
-    cout << "Nhâp so can cuoc công dân: ";
+    cout << "NhÃ¢p so can cuoc cÃ´ng dÃ¢n: ";
     cin >> cccd;
     
     if (KtTenDangNhap(TenTK)) {
-        cout << "Tên Tài Khoan " << TenTK << " da ton tai." << endl;
+        cout << "TÃªn TÃ i Khoan " << TenTK << " da ton tai." << endl;
         return;
     }
     
@@ -274,9 +270,9 @@ public:
         qlVi.TaoVi(TenTK);
         
         xuatFile.close();
-        cout << "Tài Khoan: " << TenTK << " da duoc tao thành công." << endl;
+        cout << "TÃ i Khoan: " << TenTK << " da duoc tao thÃ nh cÃ´ng." << endl;
     } else {
-        cout << "Không the mo tep de tao Tài Khoan." << endl;
+        cout << "KhÃ´ng the mo tep de tao TÃ i Khoan." << endl;
     }
 }
 
@@ -289,7 +285,7 @@ public:
 		cout << "Nhap mat khau cu: ";
 		cin >> MKCu;
 		if (!KtThongtinTK(currentUser, MKCu)) {
-			cout << "Mat khau cu không ðúng." << endl;
+			cout << "Mat khau cu khÃ´ng Ã°Ãºng." << endl;
 			return;
 		}
 		// G?i OTP
@@ -306,18 +302,18 @@ public:
 		cout << "Nhap OTP: ";
 		cin >> NhapOTP;
 		if (NhapOTP != otp) {
-			cout << "OTP không ðúng. Ð?i m?t kh?u th?t b?i." << endl;
+			cout << "OTP khÃ´ng Ã°Ãºng. Ã?i m?t kh?u th?t b?i." << endl;
 			return;
 		}
 
-		// Ð?i m?t kh?u
-		cout << "Nh?p m?t kh?u m?i: ";
+		// Ã?i m?t kh?u
+		cout << "Nhap mat khau moi: ";
 		cin >> MKMoi;
-		cout << "Xác nh?n m?t kh?u m?i: ";
+		cout << "XÃ¡c nhan mat khau moi: ";
 		cin >> XacnhanMKMoi;
 
 		if (MKMoi != XacnhanMKMoi) {
-			cout << "M?t kh?u m?i và xác nh?n không kh?p." << endl;
+			cout << "Mat khau moi vÃ  xÃ¡c nhan khÃ´ng khop." << endl;
 			return;
 		}
 
@@ -330,59 +326,59 @@ public:
 		}
 
 		LuulaiTaiKhoan(danhSach);
-		cout << "Ð?i m?t kh?u thành công." << endl;
+		cout << "Ã?i m?t kh?u thÃ nh cÃ´ng." << endl;
 	}
 	void DangNhap() {
 		string tenDN, MK;
-		cout << "============= ÐÃNG NH?P ================" << endl;
-		cout << "Tên ðãng nh?p: ";
+		cout << "============= ÃÃƒNG NH?P ================" << endl;
+		cout << "TÃªn Ã°Ã£ng nh?p: ";
 		cin >> tenDN;
 		cout << "M?t kh?u: ";
 		cin >> MK;
 
-		// Ki?m tra tài kho?n
+		// Ki?m tra tÃ i kho?n
 		if (!KtThongtinTK(tenDN, MK)) {
-			cout << "Sai tên ðãng nh?p ho?c m?t kh?u." << endl;
+			cout << "Sai tÃªn Ã°Ã£ng nh?p ho?c m?t kh?u." << endl;
 			return;
 		}
-		// Sinh và hi?n th? OTP
+		// Sinh vÃ  hi?n th? OTP
 		string otp = sinhOTP();
 		// G?i OTP (gi? l?p)
 		vector<Taikhoan> ds = docDanhSachTK(FileQuanLyTK);
 		bool timThay = false;
 		for (int i = 0; i < ds.size(); i++) {
 			if (ds[i].ten == tenDN) {
-				cout << "M? OTP ð? ðý?c g?i t?i s? ði?n tho?i: " << ds[i].sdt << ": " << otp << endl;
+				cout << "M? OTP Ã°? Ã°Ã½?c g?i t?i s? Ã°i?n tho?i: " << ds[i].sdt << ": " << otp << endl;
 				timThay = true;
 				break;
 			}
 		}
 		if (!timThay) {
-			cout << "Không t?m th?y tài kho?n ð? g?i OTP." << endl;
+			cout << "KhÃ´ng t?m th?y tÃ i kho?n Ã°? g?i OTP." << endl;
 			return;
 		}
-		// Nh?p và xác th?c OTP
+		// Nh?p vÃ  xÃ¡c th?c OTP
 		string nhapOTP1;
 		cout << "Nh?p m? OTP: ";
 		cin >> nhapOTP1;
 
 		if (nhapOTP1 != otp) {
-			cout << "M? OTP không ðúng. Ðãng nh?p th?t b?i." << endl;
+			cout << "M? OTP khÃ´ng Ã°Ãºng. ÃÃ£ng nh?p th?t b?i." << endl;
 			return;
 		}
-		// Thành công
+		// ThÃ nh cÃ´ng
 		currentUser = tenDN;
 		isAdmin = (tenDN == "admin");
-		cout << "Ðãng nh?p thành công. Xin chào, " << currentUser << "!" << endl;
+		cout << "ÃÃ£ng nh?p thÃ nh cÃ´ng. Xin chÃ o, " << currentUser << "!" << endl;
 		string nhapOTP2;
 		cout << "Nh?p m? OTP: ";
 		cin >> nhapOTP2;
 		if (nhapOTP2 != otp) {
-			cout << "M? OTP không ðúng. Ðãng nh?p th?t b?i." << endl;
+			cout << "M? OTP khÃ´ng Ã°Ãºng. ÃÃ£ng nh?p th?t b?i." << endl;
 			return;
 		}
 
-		// Xác th?c thành công
+		// XÃ¡c th?c thÃ nh cÃ´ng
 		currentUser = tenDN;
 		for (auto& tk : ds) {
 			if (tk.ten == tenDN) {
@@ -390,20 +386,20 @@ public:
 				break;
 			}
 		}
-		cout << "Ðãng nh?p thành công v?i vai tr? " << (isAdmin ? "Qu?n tr? viên." : "Ngý?i dùng.") << endl;
-		qlVi.TaiVi(); // Load d? li?u ví sau khi ðãng nh?p
+		cout << "ÃÃ£ng nh?p thÃ nh cÃ´ng v?i vai tr? " << (isAdmin ? "Qu?n tr? viÃªn." : "NgÃ½?i dÃ¹ng.") << endl;
+		qlVi.TaiVi(); // Load d? li?u vÃ­ sau khi Ã°Ã£ng nh?p
 	}
 	void XemThongTinVi()
 	{
 		if (currentUser.empty())
 		{
-			cout << "Vui l?ng ðãng nh?p trý?c.\n";
+			cout << "Vui l?ng Ã°Ã£ng nh?p trÃ½?c.\n";
 			return;
 		}
 		string viId = qlVi.LayViCuaChu(currentUser);
 		if (viId.empty())
 		{
-			cout << "B?n chýa có ví.\n";
+			cout << "B?n chÃ½a cÃ³ vÃ­.\n";
 			return;
 		}
 		qlVi.ThongTinVi(viId);
@@ -412,7 +408,7 @@ public:
 	{
 		if (currentUser.empty())
 		{
-			cout << "Vui l?ng ðãng nh?p trý?c.\n";
+			cout << "Vui l?ng Ã°Ã£ng nh?p trÃ½?c.\n";
 			return;
 		}
 		double amount;
@@ -421,7 +417,7 @@ public:
 		string viId = qlVi.LayViCuaChu(currentUser);
 		if (qlVi.Nap(viId, amount))
 		{
-			cout << "N?p ti?n thành công.\n";
+			cout << "N?p ti?n thÃ nh cÃ´ng.\n";
 		}
 		else
 		{
@@ -432,19 +428,19 @@ public:
 	{
 		if (currentUser.empty())
 		{
-			cout << "Vui l?ng ðãng nh?p trý?c.\n";
+			cout << "Vui l?ng Ã°Ã£ng nh?p trÃ½?c.\n";
 			return;
 		}
 		string viDich;
 		double amount;
-		cout << "Nh?p ID ví nh?n ti?n: ";
+		cout << "Nh?p ID vÃ­ nh?n ti?n: ";
 		cin >> viDich;
 		cout << "Nh?p s? ti?n mu?n chuy?n: ";
 		cin >> amount;
 		string viGui = qlVi.LayViCuaChu(currentUser);
 		if (qlVi.ChuyenTien(viGui, viDich, amount))
 		{
-			cout << "Chuy?n ti?n thành công.\n";
+			cout << "Chuy?n ti?n thÃ nh cÃ´ng.\n";
 		}
 		else
 		{
@@ -461,7 +457,7 @@ public:
 		cin >> nhapOTP;
 		return nhapOTP == otp;
 	}
-	// Hàm c?p nh?t thông tin cá nhân (dành cho user thý?ng)
+	// HÃ m c?p nh?t thÃ´ng tin cÃ¡ nhÃ¢n (dÃ nh cho user thÃ½?ng)
 	 void CapNhatThongTinCaNhan() {
         if (currentUser.empty()) {
             cout << "Vui long dang nhap truoc khi cap nhat thong tin.\n";
@@ -575,7 +571,7 @@ public:
             cout << "Cap nhat thanh cong.\n";
         }
     }
-	// Hàm admin ch?nh s?a thông tin tài kho?n khác
+	// HÃ m admin ch?nh s?a thÃ´ng tin tÃ i kho?n khÃ¡c
 	void AdminChinhSuaTaiKhoan() {
 		if (!isAdmin) {
 			cout << "Chi admin moi co quyen chinh sua thong tin tai khoan khac.\n";
@@ -662,7 +658,7 @@ public:
 			cout << "Cap nhat thanh cong.\n";
 		}
 	}
-    // Hàm cho phép t?o ví thông qua d?i tu?ng qlVi bên trong class
+    // HÃ m cho phÃ©p t?o vÃ­ thÃ´ng qua d?i tu?ng qlVi bÃªn trong class
     void TaoViChoNguoiDung(const string& tenChuVi) {
         qlVi.TaoVi(tenChuVi);
     }
@@ -670,11 +666,11 @@ public:
 
 
 private:
-	string FileQuanLyTK;//File lýu tt tài kho?n
-	string FileGD;//File lýu l?ch s? giao d?ch
-	string currentUser;//tên tài kho?n hi?n t?i
+	string FileQuanLyTK;//File lÃ½u tt tÃ i kho?n
+	string FileGD;//File lÃ½u l?ch s? giao d?ch
+	string currentUser;//tÃªn tÃ i kho?n hi?n t?i
 	bool isAdmin;//quy?n admin
-	QLVi qlVi;//Qu?n lí ví giá l?p
+	QLVi qlVi;//Qu?n lÃ­ vÃ­ giÃ¡ l?p
 
 	bool KtTenDangNhap( string TenDN)
 	{
@@ -717,7 +713,7 @@ private:
 	{
 		ofstream xuatFile(FileQuanLyTK);
 		if (!xuatFile.is_open()) {
-			cout << "Không th? m? t?p ð? ghi Tài Kho?n" << endl;
+			cout << "KhÃ´ng th? m? t?p Ã°? ghi TÃ i Kho?n" << endl;
 			return;
 		}
 		for (size_t i = 0; i < danhsachTaiKhoan.size(); i++)
@@ -738,7 +734,7 @@ private:
     vector<Taikhoan> danhSach;
     ifstream nhapFile(tenFile);
     if (!nhapFile.is_open()) {
-        cout << "Không th? m? file " << tenFile << endl;
+        cout << "KhÃ´ng th? m? file " << tenFile << endl;
         return danhSach;
     }
 
@@ -748,7 +744,7 @@ private:
         Taikhoan tk;
         string adminStr, ViChinhStr, ViPhuStr;
 
-        // Ð?c các trý?ng theo ðúng th? t? và phân cách b?ng d?u ph?y
+        // Ã?c cÃ¡c trÃ½?ng theo Ã°Ãºng th? t? vÃ  phÃ¢n cÃ¡ch b?ng d?u ph?y
         getline(ss, tk.ten, ',');
         getline(ss, tk.MK, ',');
         getline(ss, tk.Ngaysinh, ',');
@@ -758,13 +754,13 @@ private:
         getline(ss, ViPhuStr, ',');
         getline(ss, adminStr);
 
-        // Chuy?n ð?i các trý?ng s?
+        // Chuy?n Ã°?i cÃ¡c trÃ½?ng s?
         try {
             tk.ViChinh = ViChinhStr.empty() ? 0 : stoi(ViChinhStr);
             tk.ViPhu = ViPhuStr.empty() ? 0 : stoi(ViPhuStr);
             tk.admin = (adminStr == "1");
         } catch (const std::invalid_argument& e) {
-            cerr << "L?i chuy?n ð?i s?: " << e.what() << endl;
+            cerr << "L?i chuy?n Ã°?i s?: " << e.what() << endl;
             continue; // B? qua d?ng l?i
         }
 
@@ -801,7 +797,7 @@ int main() {
                         cout << "4. Thay doi mat khau\n";
                         cout << "5. Cap nhat thong tin ca nhan\n";
                         
-                        // N?u là admin
+                        // N?u lÃ  admin
                         if (qlTK.isAdminLoggedIn()) {
                             cout << "6. Quan ly tai khoan (Admin)\n";
                             cout << "7. Tao vi moi\n";
@@ -837,7 +833,7 @@ int main() {
                                     string owner;
                                     cout << "Nhap ten chu vi: ";
                                     cin >> owner;
-                                    qlTK.TaoViChoNguoiDung(owner); // g?i hàm public m?i
+                                    qlTK.TaoViChoNguoiDung(owner); // g?i hÃ m public m?i
 
                                 }
                                 break;
