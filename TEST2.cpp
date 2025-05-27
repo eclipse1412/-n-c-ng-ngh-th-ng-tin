@@ -666,11 +666,11 @@ public:
 
 
 private:
-	string FileQuanLyTK;//File lýu tt tài kho?n
-	string FileGD;//File lýu l?ch s? giao d?ch
-	string currentUser;//tên tài kho?n hi?n t?i
-	bool isAdmin;//quy?n admin
-	QLVi qlVi;//Qu?n lí ví giá l?p
+	string FileQuanLyTK;//File lý tt tài khoản
+	string FileGD;//File lý lịch sử giao dịch
+	string currentUser;//tên tài khoản hiện tại
+	bool isAdmin;//quyền admin
+	QLVi qlVi;//Quản lí ví giá lập
 
 	bool KtTenDangNhap( string TenDN)
 	{
@@ -690,6 +690,7 @@ private:
 		nhapfile.close();
 		return 0;
 	}
+//Ktra xác thực tên người dùng và MK
 	bool KtThongtinTK(string TenTK, string MK)
 	{
 		ifstream nhapFile(FileQuanLyTK);
@@ -700,6 +701,7 @@ private:
 			string TenTKinFile, MKinFile;
 			getline(ss, TenTKinFile, ',');
 			getline(ss, MKinFile, ',');
+			//so sánh tên tên và mk
 			if (TenTKinFile == TenTK && MKinFile == bamMK(MK))
 			{
 				nhapFile.close();
@@ -713,7 +715,7 @@ private:
 	{
 		ofstream xuatFile(FileQuanLyTK);
 		if (!xuatFile.is_open()) {
-			cout << "Không th? m? t?p ð? ghi Tài Kho?n" << endl;
+			cout << "Khong the mo tep ghi tai khoan" << endl;
 			return;
 		}
 		for (size_t i = 0; i < danhsachTaiKhoan.size(); i++)
@@ -730,7 +732,8 @@ private:
 		}
 		xuatFile.close();
 	}
-	vector<Taikhoan> docDanhSachTK(string& tenFile) {
+// Dùng để đọc tất cả dữ liệu tài khoảng trong file
+vector<Taikhoan> docDanhSachTK(string& tenFile) {
     vector<Taikhoan> danhSach;
     ifstream nhapFile(tenFile);
     if (!nhapFile.is_open()) {
@@ -744,7 +747,7 @@ private:
         Taikhoan tk;
         string adminStr, ViChinhStr, ViPhuStr;
 
-        // Ð?c các trý?ng theo ðúng th? t? và phân cách b?ng d?u ph?y
+        // Ðọc các trường theo ðúng thứ tự và phân cách bằng dấu phẩy
         getline(ss, tk.ten, ',');
         getline(ss, tk.MK, ',');
         getline(ss, tk.Ngaysinh, ',');
@@ -754,14 +757,14 @@ private:
         getline(ss, ViPhuStr, ',');
         getline(ss, adminStr);
 
-        // Chuy?n ð?i các trý?ng s?
+        // Chuyển đổi các trường
         try {
             tk.ViChinh = ViChinhStr.empty() ? 0 : stoi(ViChinhStr);
             tk.ViPhu = ViPhuStr.empty() ? 0 : stoi(ViPhuStr);
             tk.admin = (adminStr == "1");
         } catch (const std::invalid_argument& e) {
-            cerr << "L?i chuy?n ð?i s?: " << e.what() << endl;
-            continue; // B? qua d?ng l?i
+            cerr << "Lỗi chuyển đổi số: " << e.what() << endl;
+            continue; // Bỏ qua dòng lệnh
         }
 
         danhSach.push_back(tk);
