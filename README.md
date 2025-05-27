@@ -6,10 +6,10 @@ Dự án: Quản lý hệ thống người dùng bằng C++
 - Mục tiêu là thực hành kỹ năng lập trình C++ và làm việc nhóm qua Git.
 
  2. Thành viên tham gia dự án
-- Nguyễn Thanh Tú: Phát triển chức năng đăng ký và đăng nhập người dùng.
-- Dương Gia Bảo: Xây dựng module phân quyền và quản lý quyền truy cập.
-- Trần Anh Hào: Thiết kế lưu trữ dữ liệu và xử lý file.
-- Trần Hoàng Hải Đăng: Thiết kế giao diện dòng lệnh, viết tài liệu và hướng dẫn sử dụng.
+- **Nguyễn Thanh Tú**: Phát triển chức năng đăng ký và đăng nhập người dùng.
+-** Dương Gia Bảo**: Xây dựng module phân quyền và quản lý quyền truy cập.
+- **Trần Anh Hào**: Thiết kế lưu trữ dữ liệu và xử lý file.
+- **Trần Hoàng Hải Đăng**: Thiết kế giao diện dòng lệnh, viết tài liệu và hướng dẫn sử dụng.
 
  3. Phân tích, đặc tả chức năng
 - Đăng ký tài khoản: Người dùng nhập tên, mật khẩu, thông tin được lưu vào file.
