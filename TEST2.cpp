@@ -110,7 +110,7 @@ public:
     ifstream In("wallets.txt");
     
     if (!In.is_open()) {
-        cout << "Không tìmm thấy file wallets.txt ." << endl;
+        cout << "Khong tim thay file wallets.txt ." << endl;
         return;
     }
 
@@ -285,10 +285,10 @@ public:
 		cout << "Nhap mat khau cu: ";
 		cin >> MKCu;
 		if (!KtThongtinTK(currentUser, MKCu)) {
-			cout << "Mat khau cu không ðúng." << endl;
+			cout << "Mat khau cu khong dung." << endl;
 			return;
 		}
-		// G?i OTP
+		// Gui OTP
 		string otp = sinhOTP();
 		vector<Taikhoan> ds = docDanhSachTK(FileQuanLyTK);
 		for (int i = 0;i < ds.size();i++)
@@ -302,11 +302,11 @@ public:
 		cout << "Nhap OTP: ";
 		cin >> NhapOTP;
 		if (NhapOTP != otp) {
-			cout << "OTP không ðúng. Ð?i m?t kh?u th?t b?i." << endl;
+			cout << "OTP khong dung. Ðoi mat khau that bai." << endl;
 			return;
 		}
 
-		// Ð?i m?t kh?u
+		// đổi MK
 		cout << "Nhap mat khau moi: ";
 		cin >> MKMoi;
 		cout << "Xác nhan mat khau moi: ";
@@ -330,51 +330,51 @@ public:
 	}
 	void DangNhap() {
 		string tenDN, MK;
-		cout << "============= ÐÃNG NH?P ================" << endl;
-		cout << "Tên ðãng nh?p: ";
+		cout << "============= ÐANG NHAP ================" << endl;
+		cout << "Ten dang nhap: ";
 		cin >> tenDN;
-		cout << "M?t kh?u: ";
+		cout << "Mat khau: ";
 		cin >> MK;
 
-		// Ki?m tra tài kho?n
+		// Kiem tra tai khoan
 		if (!KtThongtinTK(tenDN, MK)) {
-			cout << "Sai tên ðãng nh?p ho?c m?t kh?u." << endl;
+			cout << "Sai ten dang nhap hoac mat khau." << endl;
 			return;
 		}
-		// Sinh và hi?n th? OTP
+		// Sinh và hiển thị OTP
 		string otp = sinhOTP();
-		// G?i OTP (gi? l?p)
+		// Gửi OTP (giả lậpp)
 		vector<Taikhoan> ds = docDanhSachTK(FileQuanLyTK);
 		bool timThay = false;
 		for (int i = 0; i < ds.size(); i++) {
 			if (ds[i].ten == tenDN) {
-				cout << "M? OTP ð? ðý?c g?i t?i s? ði?n tho?i: " << ds[i].sdt << ": " << otp << endl;
+				cout << "Ma OTP da duoc gui toi so dien thoai: " << ds[i].sdt << ": " << otp << endl;
 				timThay = true;
 				break;
 			}
 		}
 		if (!timThay) {
-			cout << "Không t?m th?y tài kho?n ð? g?i OTP." << endl;
+			cout << "Khong tim thay tai khoan de gui OTP." << endl;
 			return;
 		}
-		// Nh?p và xác th?c OTP
+		// Nhập xác thực bằng otp
 		string nhapOTP1;
-		cout << "Nh?p m? OTP: ";
+		cout << "Nhap ma OTP: ";
 		cin >> nhapOTP1;
 
 		if (nhapOTP1 != otp) {
-			cout << "M? OTP không ðúng. Ðãng nh?p th?t b?i." << endl;
+			cout << "Ma OTP khong dung. Ðãng nhap that bai." << endl;
 			return;
 		}
 		// Thành công
 		currentUser = tenDN;
 		isAdmin = (tenDN == "admin");
-		cout << "Ðãng nh?p thành công. Xin chào, " << currentUser << "!" << endl;
+		cout << "Ðang nhap thanh cong, xin chao " << currentUser << "!" << endl;
 		string nhapOTP2;
-		cout << "Nh?p m? OTP: ";
+		cout << "Nhap ma OTP: ";
 		cin >> nhapOTP2;
 		if (nhapOTP2 != otp) {
-			cout << "M? OTP không ðúng. Ðãng nh?p th?t b?i." << endl;
+			cout << "Ma OTP khong dung. Ðang nhap that bai." << endl;
 			return;
 		}
 
@@ -386,8 +386,8 @@ public:
 				break;
 			}
 		}
-		cout << "Ðãng nh?p thành công v?i vai tr? " << (isAdmin ? "Qu?n tr? viên." : "Ngý?i dùng.") << endl;
-		qlVi.TaiVi(); // Load d? li?u ví sau khi ðãng nh?p
+		cout << "Ðãng nhập thành công vai vai tro " << (isAdmin ? "Qu?n tri viên." : "Nguoi dung.") << endl;
+		qlVi.TaiVi(); //  lưu ví sau khi ðăng nhập
 	}
 	void XemThongTinVi()
 	{
@@ -433,18 +433,18 @@ public:
 		}
 		string viDich;
 		double amount;
-		cout << "Nh?p ID ví nh?n ti?n: ";
+		cout << "Nhap ID vi nhan tien: ";
 		cin >> viDich;
-		cout << "Nh?p s? ti?n mu?n chuy?n: ";
+		cout << "Nhap so tien muon chuyen: ";
 		cin >> amount;
 		string viGui = qlVi.LayViCuaChu(currentUser);
 		if (qlVi.ChuyenTien(viGui, viDich, amount))
 		{
-			cout << "Chuy?n ti?n thành công.\n";
+			cout << "Chuyen tien thanh cong.\n";
 		}
 		else
 		{
-			cout << "Chuy?n ti?n th?t b?i.\n";
+			cout << "Chuyen tien thet bai.\n";
 		}
 	}
 
@@ -836,8 +836,7 @@ int main() {
                                     string owner;
                                     cout << "Nhap ten chu vi: ";
                                     cin >> owner;
-                                    qlTK.TaoViChoNguoiDung(owner); // g?i hàm public m?i
-
+                                    qlTK.TaoViChoNguoiDung(owner); 
                                 }
                                 break;
                             case 0:
