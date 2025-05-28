@@ -25,15 +25,15 @@ Mục tiêu dự án là giúp sinh viên:
 - Xác thực đăng nhập  
 
 **2. Dương Gia Bảo:**  
-- Quản lý lưu trữ file (`users.txt`, `wallets.txt`)
 - Ví điểm thưởng
-- Ghi và đọc lịch sử giao dịch (`transactions.log`)  
-- Thực hiện backup và phục hồi dữ liệu  
+- Quản lý lưu trữ file (`users.txt`, `wallets.txt`)
+- Ghi và đọc lịch sử giao dịch (`transactions.log`) 
 
 **3. Trần Anh Hào:**  
 - Xây dựng phân quyền admin/user  
 - OTP, xác minh khi thay đổi thông tin và thực hiện giao dịch  
-- Quản lý xác thực hai lớp  
+- Quản lý xác thực hai lớp
+- Thực hiện backup và phục hồi dữ liệu
 
 **4. Trần Hoàng Hải Đăng:**  
 - Thiết kế giao diện dòng lệnh  
