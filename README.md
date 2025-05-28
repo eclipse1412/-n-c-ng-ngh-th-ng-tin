@@ -33,7 +33,6 @@ Mục tiêu dự án là giúp sinh viên:
 - Xây dựng phân quyền admin/user  
 - OTP, xác minh khi thay đổi thông tin và thực hiện giao dịch  
 - Quản lý xác thực hai lớp
-- Thực hiện backup và phục hồi dữ liệu
 
 **4. Trần Hoàng Hải Đăng:**  
 - Thiết kế giao diện dòng lệnh  
