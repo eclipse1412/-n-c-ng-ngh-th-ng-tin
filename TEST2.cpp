@@ -233,12 +233,12 @@ public:
     	srand((unsigned)time(0));
 	}
 
-	//hàm t?o tài kho?n m?i
+	//hàm tao tài khoan moi
 	void taoTK() {
     string TenTK, MK, Ngaysinh, cccd, sdt;
     int ViChinh = 0, ViPhu = 0;
     bool admin = false;
-    cout << "Nhap tên tài khoan moi: ";
+    cout << "Nhap ten tai khoan moi: ";
     cin >> TenTK;
     MK = sinhMKtudong();
     cout << "Mat khau duoc tao tu dong: " << MK << endl;
