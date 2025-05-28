@@ -380,7 +380,7 @@ public:
 				break;
 			}
 		}
-		cout << "Ðãng nhập thành công vai vai tro " << (isAdmin ? "Qu?n tri viên." : "Nguoi dung.") << endl;
+		cout << "Dang nhap thanh cong vai  tro " << (isAdmin ? "Quan tri vien." : "Nguoi dung.") << endl;
 		qlVi.TaiVi(); //  lưu ví sau khi đăng nhập
 	}
 	void XemThongTinVi()
