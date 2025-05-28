@@ -46,7 +46,7 @@ Mục tiêu dự án là giúp sinh viên:
 ### 1. Đăng ký tài khoản
 - Người dùng nhập tên đăng nhập, mật khẩu và thông tin cá nhân
 - Quản lý (admin) có thể tạo tài khoản hộ người dùng
-- Nếu người dùng không nhập mật khẩu, hệ thống sẽ sinh mật khẩu tự động
+- Hệ thống sẽ tự sinh mật khẩu tự động cho lần đầu tiên đăng ký tài khoản
 
 ### 2. Đăng nhập
 - Xác thực tên đăng nhập và mật khẩu đã lưu
@@ -56,6 +56,8 @@ Mục tiêu dự án là giúp sinh viên:
 - **Người dùng thường (User):**
   - Xem thông tin cá nhân
   - Cập nhật tên, email, đổi mật khẩu (có OTP xác minh)
+  - Xem thông tin ví
+  - Nạp điểm vào ví
   - Xem số dư ví
   - Thực hiện chuyển điểm
   - Xem lịch sử giao dịch
@@ -67,15 +69,15 @@ Mục tiêu dự án là giúp sinh viên:
   - Không được thay đổi tên tài khoản đăng nhập
 
 ### 4. OTP (One-Time Password)
-- Sử dụng OTP 4 chữ số để xác minh:
+- Hệ thống sẽ sinh OTP 4 chữ số ngẫu nhiên để xác minh:
   - Khi thay đổi thông tin cá nhân
   - Khi thực hiện giao dịch chuyển điểm
 - OTP có thời gian hiệu lực giới hạn, sinh ngẫu nhiên và gửi qua hệ thống CLI
 
 ### 5. Ví điểm thưởng
-- Mỗi người dùng có một ví riêng có mã định danh duy nhất
+- Mỗi người dùng có một ví riêng và có mã định danh duy nhất
 - **Chuyển điểm**:
   - Nhập mã ví đích và số điểm cần chuyển
   - Kiểm tra số dư ví nguồn
   - Xác minh OTP
-  - Thực hiện giao dịch nguyên tử: nếu một bước thất bại, toàn bộ giao dịch bị hủy
+  - Thực hiện giao dịch an toàn: nếu một trong các bước chuyển điểm thất bại (Ví dụ như số dư trong ví không đủ), toàn bộ giao dịch sẽ bị hủy và hoàn lại số dư cho người chuyển
