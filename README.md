@@ -1,8 +1,8 @@
-# Hệ thống Quản lý Người dùng và Ví Điểm Thưởng (C++
+xe# Hệ thống Quản lý Người dùng và Ví Điểm Thưởng (C++
 )
 
 ## Giới thiệu dự án
-Dự án xây dựng một hệ thống quản lý người dùng bằng ngôn ngữ lập trình **C++** với **giao diện dòng lệnh (CLI)**. Hệ thống hỗ trợ:
+Dự án xây dựng một hệ thống quản lý người dùng bằng ngôn ngữ lập trình **C++** với giao diện dòng lệnh (CLI). Hệ thống hỗ trợ:
 - Đăng ký, đăng nhập tài khoản
 - Phân quyền người dùng (admin và user)
 - Xác thực hai lớp với OTP
@@ -10,10 +10,10 @@ Dự án xây dựng một hệ thống quản lý người dùng bằng ngôn n
 - Hệ thống ví điểm thưởng cho phép chuyển điểm giữa các ví
 
 Mục tiêu dự án là giúp sinh viên:
-- Thực hành **lập trình hướng đối tượng trong C++**
-- Ứng dụng kỹ thuật **xử lý file**, **bảo mật đơn giản**
-- Học cách làm việc nhóm thông qua **GitHub**
-- Tổ chức một **dự án phần mềm thực tế** theo mô hình phân công rõ ràng
+- Thực hành lập trình hướng đối tượng trong C++
+- Ứng dụng kỹ thuật xử lý file, bảo mật đơn giản
+- Học cách làm việc nhóm thông qua GitHub
+- Tổ chức một dự án phần mềm thực tế theo mô hình phân công rõ ràng
 
 ---
 
@@ -49,7 +49,7 @@ Mục tiêu dự án là giúp sinh viên:
 - Nếu người dùng không nhập mật khẩu, hệ thống sẽ sinh mật khẩu tự động
 
 ### 2. Đăng nhập
-- Xác thực tên đăng nhập và mật khẩu đã lưu (đã được mã hóa bằng hash SHA256)
+- Xác thực tên đăng nhập và mật khẩu đã lưu
 - Nếu là mật khẩu tự động, hệ thống sẽ yêu cầu người dùng đổi mật khẩu sau lần đăng nhập đầu tiên
 
 ### 3. Phân quyền người dùng
@@ -67,7 +67,7 @@ Mục tiêu dự án là giúp sinh viên:
   - Không được thay đổi tên tài khoản đăng nhập
 
 ### 4. OTP (One-Time Password)
-- Sử dụng OTP 6 chữ số để xác minh:
+- Sử dụng OTP 4 chữ số để xác minh:
   - Khi thay đổi thông tin cá nhân
   - Khi thực hiện giao dịch chuyển điểm
 - OTP có thời gian hiệu lực giới hạn, sinh ngẫu nhiên và gửi qua hệ thống CLI
