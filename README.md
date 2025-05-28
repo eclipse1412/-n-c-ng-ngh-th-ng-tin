@@ -1,5 +1,4 @@
-## Hệ thống Quản lý Người dùng và Ví Điểm Thưởng (C++
-)
+## Hệ thống Quản lý Người dùng và Ví Điểm Thưởng (C++)
 
 ## Giới thiệu dự án
 Dự án xây dựng một hệ thống quản lý người dùng bằng ngôn ngữ lập trình **C++** với giao diện dòng lệnh (CLI). Hệ thống hỗ trợ:
