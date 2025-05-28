@@ -371,13 +371,6 @@ public:
 		currentUser = tenDN;
 		isAdmin = (tenDN == "admin");
 		cout << "Ðang nhap thanh cong, xin chao " << currentUser << "!" << endl;
-		string nhapOTP2;
-		cout << "Nhap ma OTP: ";
-		cin >> nhapOTP2;
-		if (nhapOTP2 != otp) {
-			cout << "Ma OTP khong dung. Ðang nhap that bai." << endl;
-			return;
-		}
 
 		// Xác th?c thành công
 		currentUser = tenDN;
