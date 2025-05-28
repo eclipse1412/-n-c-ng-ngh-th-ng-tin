@@ -321,13 +321,13 @@ public:
 		vector<Taikhoan> danhSach = docDanhSachTK(FileQuanLyTK);
 		for (auto& tk : danhSach) {
 			if (tk.ten == currentUser) {
-				tk.MK = bamMK(MKMoi); // Hash m?t kh?u m?i
+				tk.MK = bamMK(MKMoi); // Hash mat khau moi
 				break;
 			}
 		}
 
 		LuulaiTaiKhoan(danhSach);
-		cout << "Ð?i m?t kh?u thành công." << endl;
+		cout << "Đổi mật khẩu thành công." << endl;
 	}
 	void DangNhap() {
 		string tenDN, MK;
@@ -372,7 +372,7 @@ public:
 		isAdmin = (tenDN == "admin");
 		cout << "Ðang nhap thanh cong, xin chao " << currentUser << "!" << endl;
 
-		// Xác th?c thành công
+		// Xác thực thành công
 		currentUser = tenDN;
 		for (auto& tk : ds) {
 			if (tk.ten == tenDN) {
@@ -381,19 +381,19 @@ public:
 			}
 		}
 		cout << "Ðãng nhập thành công vai vai tro " << (isAdmin ? "Qu?n tri viên." : "Nguoi dung.") << endl;
-		qlVi.TaiVi(); //  lưu ví sau khi ðăng nhập
+		qlVi.TaiVi(); //  lưu ví sau khi đăng nhập
 	}
 	void XemThongTinVi()
 	{
 		if (currentUser.empty())
 		{
-			cout << "Vui l?ng ðãng nh?p trý?c.\n";
+			cout << "Vui lòng đãng nhập trước.\n";
 			return;
 		}
 		string viId = qlVi.LayViCuaChu(currentUser);
 		if (viId.empty())
 		{
-			cout << "B?n chýa có ví.\n";
+			cout << "Bạn chưa có ví.\n";
 			return;
 		}
 		qlVi.ThongTinVi(viId);
@@ -402,27 +402,27 @@ public:
 	{
 		if (currentUser.empty())
 		{
-			cout << "Vui l?ng ðãng nh?p trý?c.\n";
+			cout << "Vui lòng đãng nhập trước.\n";
 			return;
 		}
 		double amount;
-		cout << "Nh?p s? ti?n mu?n n?p: ";
+		cout << "Nhập số tiền muốn nộp: ";
 		cin >> amount;
 		string viId = qlVi.LayViCuaChu(currentUser);
 		if (qlVi.Nap(viId, amount))
 		{
-			cout << "N?p ti?n thành công.\n";
+			cout << "Nộp tiền thành công.\n";
 		}
 		else
 		{
-			cout << "N?p ti?n th?t b?i.\n";
+			cout << "Nộp tiền thất bại.\n";
 		}
 	}
 	void ChuyenTien()
 	{
 		if (currentUser.empty())
 		{
-			cout << "Vui l?ng ðãng nh?p trý?c.\n";
+			cout << "Vui lòng đăng nhập trước.\n";
 			return;
 		}
 		string viDich;
