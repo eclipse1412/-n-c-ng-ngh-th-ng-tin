@@ -87,6 +87,7 @@ private:
 	vector<Vi> vi;
 public:
 	void TaoVi(const string& Owner) {
+		TaiVi();
 		string Id = "W" + to_string(vi.size() + 1000);
 		vi.emplace_back(Id, Owner);
 		cout << "Id cua vi ban la: " << Id << endl;
@@ -95,7 +96,7 @@ public:
 	}
 
 	void LuuVi() {
-		ofstream Out("wallets.txt");
+		ofstream Out("wallets.txt", ios::trunc);
 		for (auto& x : vi) {
 			Out << x.getId() << "," << x.getOwner() << "," << x.getMoney();
 			for (auto& y : x.getLSGD()) {
