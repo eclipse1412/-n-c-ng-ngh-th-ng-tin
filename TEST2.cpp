@@ -431,6 +431,10 @@ public:
 		cin >> viDich;
 		cout << "Nhap so tien muon chuyen: ";
 		cin >> amount;
+		if(amount<0){
+            		cout << "So tien khong hop le.";
+            		return;
+        	}
 		string viGui = qlVi.LayViCuaChu(currentUser);
 		if (qlVi.ChuyenTien(viGui, viDich, amount))
 		{
