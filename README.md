@@ -17,8 +17,8 @@ Mục tiêu dự án là giúp sinh viên thực hành kỹ năng lập trình h
 
  
 **1. Nguyễn Thanh Tú:**   Chức năng đăng ký, đăng nhập, sinh mật khẩu tự động, xác thực đăng nhập             
-**2. Dương Gia Bảo:**    Phân quyền admin/user, OTP, xác minh thay đổi thông tin và giao dịch                
-**3. Trần Anh Hào:**      Quản lý lưu trữ file `users.txt`, `wallets.txt`, sao lưu/phục hồi dữ liệu           
+**2. Dương Gia Bảo:**  Quản lý lưu trữ file , `wallets.txt`.    
+**3. Trần Anh Hào:**   Phân quyền admin/user, OTP, xác minh thay đổi thông tin và giao dịch          
 **4. Trần Hoàng Hải Đăng:** Thiết kế giao diện dòng lệnh, tài liệu README, hướng dẫn sử dụng chương trình   
 
 ---
