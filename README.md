@@ -1,4 +1,4 @@
-xe# Hệ thống Quản lý Người dùng và Ví Điểm Thưởng (C++
+## Hệ thống Quản lý Người dùng và Ví Điểm Thưởng (C++
 )
 
 ## Giới thiệu dự án
