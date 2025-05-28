@@ -25,7 +25,8 @@ Mục tiêu dự án là giúp sinh viên:
 - Xác thực đăng nhập  
 
 **2. Dương Gia Bảo:**  
-- Quản lý lưu trữ file (`users.txt`, `wallets.txt`)  
+- Quản lý lưu trữ file (`users.txt`, `wallets.txt`)
+- Ví điểm thưởng
 - Ghi và đọc lịch sử giao dịch (`transactions.log`)  
 - Thực hiện backup và phục hồi dữ liệu  
 
@@ -69,7 +70,7 @@ Mục tiêu dự án là giúp sinh viên:
   - Không được thay đổi tên tài khoản đăng nhập
 
 ### 4. OTP (One-Time Password)
-- Hệ thống sẽ sinh OTP 4 chữ số ngẫu nhiên để xác minh:
+- Hệ thống sẽ tự sinh OTP 4 chữ số ngẫu nhiên để xác minh:
   - Khi thay đổi thông tin cá nhân
   - Khi thực hiện giao dịch chuyển điểm
 - OTP có thời gian hiệu lực giới hạn, tự sinh ngẫu nhiên và gửi qua hệ thống CLI
