@@ -72,12 +72,13 @@ Mục tiêu dự án là giúp sinh viên:
 - Hệ thống sẽ sinh OTP 4 chữ số ngẫu nhiên để xác minh:
   - Khi thay đổi thông tin cá nhân
   - Khi thực hiện giao dịch chuyển điểm
-- OTP có thời gian hiệu lực giới hạn, sinh ngẫu nhiên và gửi qua hệ thống CLI
+- OTP có thời gian hiệu lực giới hạn, tự sinh ngẫu nhiên và gửi qua hệ thống CLI
 
 ### 5. Ví điểm thưởng
 - Mỗi người dùng có một ví riêng và có mã định danh duy nhất
 - **Chuyển điểm**:
-  - Nhập mã ví đích và số điểm cần chuyển
+  - Nhập mã ví đích
+  - Số điểm cần chuyển
   - Kiểm tra số dư ví nguồn
   - Xác minh OTP
   - Thực hiện giao dịch an toàn: nếu một trong các bước chuyển điểm thất bại (Ví dụ như số dư trong ví không đủ), toàn bộ giao dịch sẽ bị hủy và hoàn lại số dư cho người chuyển
